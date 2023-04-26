@@ -22,7 +22,7 @@ public class ClockTime : MonoBehaviour
     void setHours()
     {
         //Take hours value and convert in range(0, 1), push this value in lerp and convert to angle in range(0, 360)
-        _hours.localEulerAngles = new Vector3(Mathf.Lerp(0, 360, Mathf.InverseLerp(0, 12, DateTime.Now.Hour)), 0, 0);
+        _hours.localEulerAngles = new Vector3(Mathf.Lerp(0, 360, Mathf.InverseLerp(0, 12, DateTime.Now.Hour % 12) ), 0, 0);
     }
     
     void setMinutes()
